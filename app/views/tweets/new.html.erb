@@ -1,4 +1,4 @@
-<div class="container">
+
 
 	<%= simple_form_for @tweet do |f| %>
 	  <%= f.input :content, input_html: {style: 'margin-bottom: 10px;'} %>
@@ -8,4 +8,3 @@
 	<% Tweet.all.each do |tweet| %>
 		<%= tweet.content %><br />
 	<% end %>
-</div>
