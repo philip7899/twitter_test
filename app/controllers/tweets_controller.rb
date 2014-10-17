@@ -7,9 +7,16 @@ class TweetsController < ApplicationController
 	end
 
 	def create
-		@tweet = Tweet.create(tweet_params)
-		flash[:success] = "Tweet Created"
-		redirect_to new_tweet_path
+		@tweet = Tweet.new(tweet_params)
+		if @tweet.save
+			flash.now[:success] = "Tweet Created"
+		else
+			flash.now[:danger] = "Tweet not saved"
+		end
+
+		render 'new'
+
+		#redirect_to new_tweet_path
 	end
 
 	private
