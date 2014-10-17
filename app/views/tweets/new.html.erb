@@ -1,5 +1,9 @@
 Here is where we will make a new tweet
-
+<div class="container">
+	<% flash.each do |key, value| %>
+	    <div class="alert alert-<%= key %>"><%= value %></div>
+	<% end %>
+</div>
 <%= simple_form_for @tweet do |f| %>
   <%= f.input :content, input_html: {style: 'margin-bottom: 10px;'} %>
   <%= f.button :submit %>
