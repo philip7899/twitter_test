@@ -5,6 +5,7 @@
 	  <%= f.button :submit %>
 	<% end %>
 
-	<% Tweet.all.each do |tweet| %>
+	<b>My Tweets<br /></b>
+	<% current_user.tweets.each do |tweet| %>
 		<%= tweet.content %><br />
 	<% end %>
